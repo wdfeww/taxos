@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Los Taxos 2025</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <h1 class="h4 mb-3">Los Taxos 2025</h1>
+              <p class="text-secondary mb-4">
+                Fill all inputs and results will update automatically.
+              </p>
+              <form id="calcForm" class="row g-5" novalidate>
+                <div class="col-md-6">
+                  <label class="form-label" for="prijmy">Príjmy (pripísane na učet za minuly rok)</label>
+                  <input
+                    id="prijmy"
+                    class="form-control"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="e.g. 9999.99"
+                    required
+                  />
+                  <div class="invalid-feedback">Enter a valid value.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="odvody">Odvody (sociálna a zdavotná spolu)</label>
+                  <input
+                    id="odvody"
+                    class="form-control"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="e.g. 2029.32"
+                    required
+                  />
+                  <div class="invalid-feedback">Enter a valid value.</div>
+                </div>
+              </form>
+              <hr class="my-4" />
+              <div id="status" class="alert alert-info mb-4">
+                Please fill all fields to see results.
+              </div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="fixneVydavky">Fixne výdavky 60%</label>
+                  <input id="fixneVydavky" class="form-control" type="text" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="nezdanitelnaCast">Nezdaniteľná časť</label>
+                  <input id="nezdanitelnaCast" class="form-control" type="text" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="zakladDane">Základ dane</label>
+                  <input id="zakladDane" class="form-control" type="text" readonly />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="nczd">Základ dane po odpočítani nezdaniteľnej časti</label>
+                  <input id="nczd" class="form-control fw-semibold" type="text" readonly />
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="vydavky">Výdavky</label>
+                    <input id="vydavky" class="form-control fw-semibold" type="text" readonly />
+                  </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="dan">Daň (15% daň pri príjme do ~50k eur)</label>
+                    <input id="dan" class="form-control fw-semibold" type="text" readonly />
+                  </div>
+              </div>
+              <div class="text-secondary mt-3 small">
+                Tip: Taxos 2025
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const _0x16c43c=_0x585d;function _0x585d(_0x450f69,_0x1fe0d2){_0x450f69=_0x450f69-0x148;const _0x5ab4d7=_0x5726();let _0x2039c4=_0x5ab4d7[_0x450f69];return _0x2039c4;}(function(_0x35288e,_0x28d8fc){const _0x1b404a=_0x585d,_0x2f8a52=_0x35288e();while(!![]){try{const _0x28ed10=-parseInt(_0x1b404a(0x14f))/0x1+-parseInt(_0x1b404a(0x155))/0x2*(parseInt(_0x1b404a(0x14c))/0x3)+-parseInt(_0x1b404a(0x17a))/0x4+-parseInt(_0x1b404a(0x16b))/0x5+-parseInt(_0x1b404a(0x15c))/0x6*(-parseInt(_0x1b404a(0x16d))/0x7)+parseInt(_0x1b404a(0x15a))/0x8*(parseInt(_0x1b404a(0x168))/0x9)+parseInt(_0x1b404a(0x175))/0xa;if(_0x28ed10===_0x28d8fc)break;else _0x2f8a52['push'](_0x2f8a52['shift']());}catch(_0x128184){_0x2f8a52['push'](_0x2f8a52['shift']());}}}(_0x5726,0x3ecae));function getNumber(_0x51ca2f){const _0x31703a=_0x585d,_0x1786a4=document[_0x31703a(0x163)](_0x51ca2f)[_0x31703a(0x171)][_0x31703a(0x14a)](),_0xad855e=Number(_0x1786a4);return Number[_0x31703a(0x178)](_0xad855e)?_0xad855e:null;}const form=document['getElementById']('calcForm'),status=document[_0x16c43c(0x163)]('status'),outputs={'fixneVydavky':document[_0x16c43c(0x163)]('fixneVydavky'),'nezdanitelnaCast':document[_0x16c43c(0x163)]('nezdanitelnaCast'),'zakladDane':document[_0x16c43c(0x163)]('zakladDane'),'nczd':document[_0x16c43c(0x163)]('nczd'),'vydavky':document['getElementById']('vydavky'),'dan':document['getElementById']('dan')},inputs=['prijmy','odvody'][_0x16c43c(0x174)](_0x3eb72f=>document[_0x16c43c(0x163)](_0x3eb72f));function validateInputs(){const _0x172b79=_0x16c43c;let _0x366363=!![];for(const _0x41520f of inputs){!_0x41520f[_0x172b79(0x15e)]()?(_0x41520f[_0x172b79(0x14e)][_0x172b79(0x162)]('is-invalid'),_0x366363=![]):_0x41520f[_0x172b79(0x14e)][_0x172b79(0x14b)]('is-invalid');}return _0x366363;}function clearOutputs(){const _0x4da5d2=_0x16c43c,_0x1e6df8=(function(){let _0x316ed0=!![];return function(_0x4f1f36,_0xa36d15){const _0x2607fb=_0x316ed0?function(){const _0x708225=_0x585d;if(_0xa36d15){const _0x804d09=_0xa36d15[_0x708225(0x150)](_0x4f1f36,arguments);return _0xa36d15=null,_0x804d09;}}:function(){};return _0x316ed0=![],_0x2607fb;};}()),_0x387e4e=_0x1e6df8(this,function(){const _0x4c567f=_0x585d;return _0x387e4e[_0x4c567f(0x159)]()['search']('(((.+)+)+)+$')[_0x4c567f(0x159)]()['constructor'](_0x387e4e)[_0x4c567f(0x157)]('(((.+)+)+)+$');});_0x387e4e();const _0x4c43f8=(function(){let _0x178e06=!![];return function(_0x1c72f7,_0x19c7ff){const _0x5e71aa=_0x178e06?function(){const _0x478f38=_0x585d;if(_0x19c7ff){const _0x58b102=_0x19c7ff[_0x478f38(0x150)](_0x1c72f7,arguments);return _0x19c7ff=null,_0x58b102;}}:function(){};return _0x178e06=![],_0x5e71aa;};}());(function(){_0x4c43f8(this,function(){const _0x2fa1b5=_0x585d,_0x5367e8=new RegExp(_0x2fa1b5(0x16a)),_0x40bae7=new RegExp('\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)','i'),_0xf64d60=_0x2039c4(_0x2fa1b5(0x170));!_0x5367e8[_0x2fa1b5(0x16f)](_0xf64d60+_0x2fa1b5(0x161))||!_0x40bae7[_0x2fa1b5(0x16f)](_0xf64d60+_0x2fa1b5(0x149))?_0xf64d60('0'):_0x2039c4();})();}());for(const _0x30d06e of Object['keys'](outputs)){outputs[_0x30d06e][_0x4da5d2(0x171)]='';}}function calculateAndRender(){const _0x249112=_0x16c43c,_0xf7187f=validateInputs();if(!_0xf7187f){status[_0x249112(0x179)]=_0x249112(0x169),status[_0x249112(0x164)]=_0x249112(0x15f),clearOutputs();return;}const _0x295b15=getNumber('prijmy'),_0x229cfe=getNumber('odvody');if(_0x295b15===null||_0x229cfe===null){status[_0x249112(0x179)]='alert\x20alert-info\x20mb-4',status[_0x249112(0x164)]=_0x249112(0x15f),clearOutputs();return;}const _0x3a6921=_0x295b15*0.6,_0x82beed=273.99,_0x5cf8a4=92.8,_0x53f1d0=_0x82beed*_0x5cf8a4,_0x1bd365=0x15,_0x5d0f51=_0x1bd365*_0x82beed,_0x5cbb16=_0x295b15-_0x3a6921<_0x53f1d0?_0x5d0f51:'xxx',_0x4009a0=_0x295b15-_0x3a6921-_0x229cfe,_0x1883de=_0x4009a0-_0x5cbb16<0x0?0x0:_0x4009a0-_0x5cbb16,_0x245740=_0x295b15-_0x5cbb16-_0x1883de,_0x4d4230=_0x1883de*0.15;outputs[_0x249112(0x165)]['value']=_0x3a6921['toFixed'](0x1),_0x5cbb16==_0x249112(0x154)?outputs['nezdanitelnaCast'][_0x249112(0x171)]=_0x249112(0x15b):(outputs['nezdanitelnaCast'][_0x249112(0x171)]=_0x5cbb16,outputs[_0x249112(0x153)]['value']=_0x4009a0[_0x249112(0x167)](0x2),outputs[_0x249112(0x156)][_0x249112(0x171)]=_0x1883de,outputs[_0x249112(0x15d)][_0x249112(0x171)]=_0x245740,outputs[_0x249112(0x177)][_0x249112(0x171)]=_0x4d4230),status[_0x249112(0x179)]='alert\x20alert-success\x20mb-4',status['textContent']=_0x249112(0x166);}for(const el of inputs){el[_0x16c43c(0x16c)](_0x16c43c(0x149),calculateAndRender),el['addEventListener'](_0x16c43c(0x158),calculateAndRender);}clearOutputs();function _0x2039c4(_0xfb5341){function _0x2ab53e(_0x19c31c){const _0x3178a4=_0x585d;if(typeof _0x19c31c===_0x3178a4(0x16e))return function(_0x66551d){}['constructor'](_0x3178a4(0x176))['apply'](_0x3178a4(0x152));else(''+_0x19c31c/_0x19c31c)['length']!==0x1||_0x19c31c%0x14===0x0?function(){return!![];}[_0x3178a4(0x151)](_0x3178a4(0x172)+_0x3178a4(0x14d))[_0x3178a4(0x148)](_0x3178a4(0x160)):function(){return![];}[_0x3178a4(0x151)]('debu'+_0x3178a4(0x14d))['apply'](_0x3178a4(0x173));_0x2ab53e(++_0x19c31c);}try{if(_0xfb5341)return _0x2ab53e;else _0x2ab53e(0x0);}catch(_0x598093){}}function _0x5726(){const _0x494318=['while\x20(true)\x20{}','dan','isFinite','className','1233960KVwPoi','call','input','trim','remove','15lEAixJ','gger','classList','138759pulkXJ','apply','constructor','counter','zakladDane','xxx','142270ESGLky','nczd','search','blur','toString','1123968PcuIjQ','Ti\x20drbe\x20ne?\x20Vela\x20prachov\x20mas.','678tVdqyq','vydavky','checkValidity','Please\x20fill\x20all\x20fields\x20with\x20valid\x20values\x20to\x20see\x20results.','action','chain','add','getElementById','textContent','fixneVydavky','Calculated\x20successfully.','toFixed','9SRxZlr','alert\x20alert-info\x20mb-4','function\x20*\x5c(\x20*\x5c)','87470UNhliZ','addEventListener','413pTdQJj','string','test','init','value','debu','stateObject','map','9304530vNeoBP'];_0x5726=function(){return _0x494318;};return _0x5726();}
+    </script>
+  </body>
+</html>
